@@ -1,4 +1,4 @@
-# QuickPay
+# QuickPay 💚
 Making transactions simple!
 
 ## API Reference
