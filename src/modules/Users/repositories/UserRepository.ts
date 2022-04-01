@@ -33,4 +33,17 @@ export class UserRepository implements IUserRepository {
     });
     return user;
   }
+
+  async update(id: string, cash: number): Promise<User> {
+    const user = await prisma.user.update({
+      where: {
+        id,
+      },
+      data: {
+        cash,
+      }
+    });
+
+    return user;
+  }
 }

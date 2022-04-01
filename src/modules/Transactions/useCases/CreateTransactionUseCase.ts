@@ -15,6 +15,12 @@ export class CreateTransactionUseCase {
       throw new Error("Transaction Failed.");
     }
 
+    const userCash = user.cash - amount;
+    const retailerCash = user.cash + amount;
+
+    await userRepository.update(user.id, userCash);
+    await retailerRepository.update(retailer.id, retailerCash);
+
     const transaction = await transactionsRepository.create(amount, user_id, retailer.id);
     return transaction;
   }

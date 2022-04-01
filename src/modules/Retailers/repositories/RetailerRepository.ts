@@ -33,4 +33,17 @@ export class RetailerRepository implements IRetailerRepository {
     });
     return retailer;
   }
+
+  async update(id: string, cash: number): Promise<Retailer> {
+    const retailer = await prisma.retailer.update({
+      where: {
+        id,
+      },
+      data: {
+        cash,
+      }
+    });
+
+    return retailer;
+  }
 }
