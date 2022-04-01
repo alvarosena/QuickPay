@@ -33,7 +33,12 @@ __POST /api/v1/users__
 	"password": "1234"
 }
 ```
-__Response: 201 Created!__
+__Response:__
+```json
+{
+	"status_code": 201
+}
+```
 
 __POST /api/v1/users/auth/login__
 ```json
@@ -60,7 +65,12 @@ __POST /api/v1/retailers__
 	"password": "12345678"
 }
 ```
-__Response: 201 Created!__
+__Response:__
+```json
+{
+	"status_code": 201
+}
+```
 
 __POST /api/v1/retailers/auth/login__
 ```json
@@ -73,5 +83,28 @@ __Response:__
 ```json
 {
 	"access_token": "JWT TOKEN"
+}
+```
+
+### Transactions
+__POST /api/v1/transactions__
+```json
+{
+  "headers": {
+		"Authorization": "Bearer token"
+	}
+}
+```
+__Request body:__
+```json
+{
+	"amount": 200.00,
+	"retailer_email": "brianc@example.com"
+}
+```
+__Response:__
+```json
+{
+	"status_code": 200
 }
 ```
