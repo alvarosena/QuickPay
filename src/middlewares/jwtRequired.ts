@@ -21,7 +21,7 @@ export async function jwtRequired(request: Request, response: Response, next: Ne
     const { sub: user_id } = verify(token, secret) as IPayload;
     const userRepository = new UserRepository();
 
-    const user = userRepository.findById(user_id);
+    const user = await userRepository.findById(user_id);
 
     if (!user) {
       throw new Error("User not found.")
