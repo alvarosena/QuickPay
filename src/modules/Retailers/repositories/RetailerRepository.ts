@@ -24,4 +24,13 @@ export class RetailerRepository implements IRetailerRepository {
     });
     return retailer;
   }
+
+  async findById(id: string): Promise<Retailer | null> {
+    const retailer = await prisma.retailer.findFirst({
+      where: {
+        id
+      }
+    });
+    return retailer;
+  }
 }

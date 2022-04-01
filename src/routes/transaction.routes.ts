@@ -1,9 +1,9 @@
 import { Router } from "express";
 import { CreateTransactionController } from "../modules/Transactions/useCases/CreateTransactionController";
-import { jwtRequired } from '../middlewares/jwtRequired';
+import { jwtRequiredUser } from '../middlewares/jwtRequiredUser';
 
 export const transactionRoutes = Router();
 
 const createTransactionController = new CreateTransactionController();
 
-transactionRoutes.post('/', jwtRequired, createTransactionController.handle);
+transactionRoutes.post('/', jwtRequiredUser, createTransactionController.handle);

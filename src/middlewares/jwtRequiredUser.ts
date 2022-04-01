@@ -7,7 +7,7 @@ interface IPayload {
   sub: string
 }
 
-export async function jwtRequired(request: Request, response: Response, next: NextFunction) {
+export async function jwtRequiredUser(request: Request, response: Response, next: NextFunction) {
   try {
     const { secret } = authConfig.jwt;
     const authHeader = request.headers.authorization;
