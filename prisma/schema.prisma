@@ -8,13 +8,15 @@ datasource db {
 }
 
 model User {
-  id         String   @id @default(uuid())
-  full_name  String
-  cpf        String   @unique
-  cnpj       String   @unique
-  email      String   @unique
-  password   String
-  created_at DateTime @default(now())
+  id           String        @id @default(uuid())
+  full_name    String
+  cpf          String        @unique
+  cnpj         String        @unique
+  email        String        @unique
+  password     String
+  cash         Float         @default(1000)
+  created_at   DateTime      @default(now())
+  transactions Transaction[]
 
   @@map("users")
 }
@@ -26,7 +28,20 @@ model Retailer {
   cnpj       String   @unique
   email      String   @unique
   password   String
+  cash       Float    @default(1000)
   created_at DateTime @default(now())
 
+  transactions Transaction[]
   @@map("retailers")
+}
+
+model Transaction {
+  id          String   @id @default(uuid())
+  amount      Float
+  user        User     @relation(fields: [user_id], references: [id])
+  user_id     String
+  retailer    Retailer @relation(fields: [retailer_id], references: [id])
+  retailer_id String
+
+  @@map("transactions")
 }
