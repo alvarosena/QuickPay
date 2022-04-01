@@ -5,9 +5,9 @@ export class CreateRetailerUseCase {
   async execute(full_name: string, cpf: string, cnpj: string, email: string, password: string) {
     const retailerRepository = new RetailerRepository();
 
-    const userAlreadyExists = await retailerRepository.findByEmail(email);
+    const retailerAlreadyExists = await retailerRepository.findByEmail(email);
 
-    if (userAlreadyExists) {
+    if (retailerAlreadyExists) {
       throw new Error("User already exists");
     }
 

@@ -1,5 +1,5 @@
 import { Retailer } from '@prisma/client';
-import { prisma } from '../database';
+import { prisma } from '../../../database';
 import { IRetailerRepository } from "./IRetailerRepository";
 
 
