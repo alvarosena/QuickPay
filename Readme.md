@@ -1,10 +1,28 @@
 # QuickPay 💚
 Making transactions simple!
 
-## API Reference
+## Setup & Instalation
+Make sure you have Node.js installed.
 <pre>
-POST /api/v1/users
-Payload:
+git clone 'repo.git'
+</pre>
+
+## Install all dependencies
+<pre>yarn install</pre>
+
+## Technologies
+<pre>
+ - Node
+ - Typescript
+ - PostgreSQL
+ - Express
+ - Prisma ORM
+ - Heroku
+</pre>
+
+## API Reference
+__POST /api/v1/users__
+```json
 {
 	"full_name": "David",
 	"cpf": "000000-01",
@@ -12,20 +30,20 @@ Payload:
 	"email": "david@example.com",
 	"password": "1234"
 }
+```
+__Response: 201 Created!__
 
-Response: 201 Created!
-</pre>
-
-<pre>
-POST /api/v1/users/auth/login
-Payload:
+__POST /api/v1/users/auth/login__
+```json
 {
 	"email": "david@example.com",
 	"password": "1234"
 }
-
-Response:
+```
+__Response:__
+```json
 {
-  "acess_token": "JWT TOKEN"
+	"access_token": "JWT TOKEN"
+
 }
-</pre>
+```
