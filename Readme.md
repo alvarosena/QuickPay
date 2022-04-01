@@ -7,7 +7,7 @@ Make sure you have Node.js installed.
 git clone 'repo.git'
 </pre>
 
-## Install all dependencies
+###  Install all dependencies
 <pre>yarn install</pre>
 
 ## Technologies
@@ -21,6 +21,8 @@ git clone 'repo.git'
 </pre>
 
 ## API Reference
+
+### Users
 __POST /api/v1/users__
 ```json
 {
@@ -44,6 +46,5 @@ __Response:__
 ```json
 {
 	"access_token": "JWT TOKEN"
-
 }
 ```
