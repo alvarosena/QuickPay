@@ -48,3 +48,30 @@ __Response:__
 	"access_token": "JWT TOKEN"
 }
 ```
+
+### Retailers
+__POST /api/v1/retailers__
+```json
+{
+	"full_name": "Brian Craw",
+	"cpf": "000000-03",
+	"cnpj": "000000-0003",
+	"email": "brianc@example.com",
+	"password": "12345678"
+}
+```
+__Response: 201 Created!__
+
+__POST /api/v1/retailers/auth/login__
+```json
+{
+	"email": "brianc@example.com",
+	"password": "12345678"
+}
+```
+__Response:__
+```json
+{
+	"access_token": "JWT TOKEN"
+}
+```
