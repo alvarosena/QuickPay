@@ -21,6 +21,7 @@ git clone 'repo.git'
 </pre>
 
 ## API Reference
+__BaseURL:__ https://quickpay-a.herokuapp.com/
 
 ### Users
 __POST /api/v1/users__
