@@ -109,3 +109,28 @@ __Response:__
 	"status_code": 200
 }
 ```
+
+__GET /api/v1/transactions__
+```json
+{
+  "headers": {
+		"Authorization": "Bearer token"
+	}
+}
+```
+__Response:__
+```json
+[
+  {
+    "id": "7ca48911-4414-4c25-99f5-0f46b8d24744",
+    "amount": 200,
+    "user_id": "c0425d54-d5a0-4338-ad90-33c4ccf13277",
+    "retailer_id": "8c487219-cf19-4b4b-b69f-6b250e541f38"
+  }
+]
+```
+```json
+{
+	"status_code": 200
+}
+```

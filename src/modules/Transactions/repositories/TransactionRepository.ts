@@ -1,4 +1,4 @@
-import { Transaction } from "@prisma/client";
+import { Retailer, Transaction, User } from "@prisma/client";
 import { prisma } from "../../../database";
 import { ITransactionRepository } from "./ITransactionRepository";
 
@@ -12,5 +12,25 @@ export class TransactionRepository implements ITransactionRepository {
       }
     });
     return transaction;
+  }
+
+  async listUserTransactions(user_id: string): Promise<Transaction[]> {
+    const transactions = await prisma.transaction.findMany({
+      where: {
+        user_id,
+      }
+    });
+
+    return transactions;
+  }
+
+  async listReatilerTransactions(retailer_id: string): Promise<Transaction[]> {
+    const transactions = await prisma.transaction.findMany({
+      where: {
+        retailer_id,
+      }
+    });
+
+    return transactions;
   }
 }
